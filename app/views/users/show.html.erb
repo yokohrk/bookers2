@@ -1,4 +1,6 @@
-<h1>Books</h1>
+<%= render 'info', user: @user %>
+<%= render 'books/new', book: @book %>
+
 <table>
   <tbody>
     <% @books.each do |book| %>
