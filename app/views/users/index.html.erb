@@ -1,26 +1,30 @@
-<%= render 'info', user: current_user %>
-<%= render 'books/new', book: @book %>
+<div class="col-md-3">
+  <%= render 'info', user: current_user %>
+  <%= render 'books/new', book: Book.new %>
+</div>
 
-<h1>Users</h1>
-<table>
-  <thead>
-    <tr>
-      <td>image</td>
-      <td>name</td>
-      <td></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <td>
-        <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-      </td>
-      <td><%= user.name %></td>
-      <td>
-        <%= link_to "Show", user_path(user.id) %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="col-md-8 offset-md-1">
+  <h2>Users</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <td class="font-weight-bold" style="width: 160px;">image</td>
+        <td class="font-weight-bold">name</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40' %>
+        </td>
+        <td><%= user.name %></td>
+        <td>
+          <%= link_to "Show", user_path(user.id) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+* {
+  word-wrap: break-word;
+  word-break: break-word
+}
+.alert,
+#error_explanation {
+  color: #dc3545;
+  font-weight: bold;
+}
+.notice {
+  color: #28a745;
+  font-weight: bold;
+}
+.table {
+  table-layout: fixed;
+}
+nav.pagination span {
+  padding: 0.5rem;
+}
